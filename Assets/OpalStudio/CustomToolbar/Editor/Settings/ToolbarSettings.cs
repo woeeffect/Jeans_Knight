@@ -15,24 +15,24 @@ namespace OpalStudio.CustomToolbar.Editor.Settings
       /// </summary>
       internal static class ToolbarSettings
       {
-            private const string ConfigAssetPath = "Assets/Settings/CustomToolbar/CustomToolbarSettings.asset";
+            private const string _ConfigAssetPath = "Assets/Settings/CustomToolbar/CustomToolbarSettings.asset";
 
-            private static ToolbarConfiguration instance;
+            private static ToolbarConfiguration _instance;
 
             public static ToolbarConfiguration Instance
             {
                   get
                   {
-                        instance = instance ? instance : LoadOrCreateConfiguration();
+                        _instance = _instance ? _instance : LoadOrCreateConfiguration();
 
-                        return instance;
+                        return _instance;
                   }
             }
 
             private static ToolbarConfiguration LoadOrCreateConfiguration()
             {
                   // Attempt to load the existing configuration from the predefined asset path
-                  var config = AssetDatabase.LoadAssetAtPath<ToolbarConfiguration>(ConfigAssetPath);
+                  var config = AssetDatabase.LoadAssetAtPath<ToolbarConfiguration>(_ConfigAssetPath);
 
                   if (config != null)
                   {
@@ -43,9 +43,9 @@ namespace OpalStudio.CustomToolbar.Editor.Settings
 
                   PopulateWithDefaultData(newConfig);
 
-                  Directory.CreateDirectory(Path.GetDirectoryName(ConfigAssetPath)!);
+                  Directory.CreateDirectory(Path.GetDirectoryName(_ConfigAssetPath)!);
 
-                  AssetDatabase.CreateAsset(newConfig, ConfigAssetPath);
+                  AssetDatabase.CreateAsset(newConfig, _ConfigAssetPath);
 
                   AssetDatabase.SaveAssets();
                   AssetDatabase.Refresh();

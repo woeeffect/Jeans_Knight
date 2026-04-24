@@ -7,7 +7,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.Favorites
 {
       sealed internal class ToolbarFavorites : BaseToolbarElement
       {
-            private GUIContent buttonContent;
+            private GUIContent _buttonContent;
 
             protected override string Name => "Favorites";
             protected override string Tooltip => "Quick access to favorite assets and folders.";
@@ -16,14 +16,14 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.Favorites
             {
                   Texture icon = EditorGUIUtility.IconContent("d_Favorite Icon").image;
 
-                  buttonContent = new GUIContent(icon, this.Tooltip);
+                  _buttonContent = new GUIContent(icon, this.Tooltip);
             }
 
             public override void OnDrawInToolbar()
             {
                   using (new EditorGUI.DisabledScope(!this.Enabled))
                   {
-                        if (GUILayout.Button(buttonContent, ToolbarStyles.CommandButtonStyle, GUILayout.Width(this.Width)))
+                        if (GUILayout.Button(_buttonContent, ToolbarStyles.CommandButtonStyle, GUILayout.Width(this.Width)))
                         {
                               FavoritesWindow.ShowWindow();
                         }

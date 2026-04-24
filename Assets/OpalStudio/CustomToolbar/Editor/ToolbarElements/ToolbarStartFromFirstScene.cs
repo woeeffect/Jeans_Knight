@@ -8,7 +8,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
 {
       sealed internal class ToolbarStartFromFirstScene : BaseToolbarElement
       {
-            private static GUIContent buttonContent;
+            private static GUIContent _buttonContent;
 
             protected override string Name => "Start From First Scene";
             protected override string Tooltip => "Saves changes, starts Play Mode from the first scene in Build Settings, and returns to the original scene on exit.";
@@ -16,7 +16,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
             public override void OnInit()
             {
                   Texture icon = EditorGUIUtility.IconContent("d_PlayButton@2x").image;
-                  buttonContent = new GUIContent(icon, this.Tooltip);
+                  _buttonContent = new GUIContent(icon, this.Tooltip);
 
                   this.Enabled = !EditorApplication.isPlayingOrWillChangePlaymode &&
                                  SceneUtility.GetBuildIndexByScenePath(SceneUtility.GetScenePathByBuildIndex(0)) != -1;
@@ -31,7 +31,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
             {
                   using (new EditorGUI.DisabledScope(!this.Enabled))
                   {
-                        if (GUILayout.Button(buttonContent, ToolbarStyles.CommandButtonStyle, GUILayout.Width(this.Width)))
+                        if (GUILayout.Button(_buttonContent, ToolbarStyles.CommandButtonStyle, GUILayout.Width(this.Width)))
                         {
                               SceneAssetsUtils.StartPlayModeFromFirstScene();
                         }

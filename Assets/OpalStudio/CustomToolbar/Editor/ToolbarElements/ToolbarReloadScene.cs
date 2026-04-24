@@ -7,7 +7,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
 {
       sealed internal class ToolbarReloadScene : BaseToolbarElement
       {
-            private static GUIContent buttonContent;
+            private static GUIContent _buttonContent;
 
             protected override string Name => "Reload Scene";
             protected override string Tooltip => "Reloads the currently active scene (only in Play Mode).";
@@ -15,7 +15,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
             public override void OnInit()
             {
                   Texture icon = EditorGUIUtility.IconContent("d_Refresh").image;
-                  buttonContent = new GUIContent(icon, this.Tooltip);
+                  _buttonContent = new GUIContent(icon, this.Tooltip);
 
                   this.Enabled = false;
             }
@@ -29,7 +29,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
             {
                   using (new EditorGUI.DisabledScope(!this.Enabled))
                   {
-                        if (GUILayout.Button(buttonContent, ToolbarStyles.CommandButtonStyle, GUILayout.Width(this.Width)))
+                        if (GUILayout.Button(_buttonContent, ToolbarStyles.CommandButtonStyle, GUILayout.Width(this.Width)))
                         {
                               SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                         }

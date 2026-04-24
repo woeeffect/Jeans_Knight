@@ -9,7 +9,7 @@ namespace OpalStudio.CustomToolbar.Editor.Utils
 {
       internal static class SceneAssetsUtils
       {
-            private const string LastSceneSetupStateKey = "CustomToolbar.LastSceneSetup";
+            private const string _LastSceneSetupStateKey = "CustomToolbar.LastSceneSetup";
 
             [Serializable]
             private class SerializableSceneSetup
@@ -60,7 +60,7 @@ namespace OpalStudio.CustomToolbar.Editor.Utils
 
                         string jsonSetup = JsonUtility.ToJson(wrapper);
 
-                        SessionState.SetString(LastSceneSetupStateKey, jsonSetup);
+                        SessionState.SetString(_LastSceneSetupStateKey, jsonSetup);
 
                         string firstScenePath = EditorBuildSettings.scenes[0].path;
                         EditorSceneManager.OpenScene(firstScenePath);
@@ -70,7 +70,7 @@ namespace OpalStudio.CustomToolbar.Editor.Utils
 
             public static void RestoreSceneAfterPlay()
             {
-                  string jsonSetup = SessionState.GetString(LastSceneSetupStateKey, string.Empty);
+                  string jsonSetup = SessionState.GetString(_LastSceneSetupStateKey, string.Empty);
 
                   if (!string.IsNullOrEmpty(jsonSetup))
                   {
@@ -84,7 +84,7 @@ namespace OpalStudio.CustomToolbar.Editor.Utils
                                     if (!File.Exists(setup.path))
                                     {
                                           Debug.LogWarning($"[CustomToolbar] Could not restore scene setup. File not found at path: {setup.path}");
-                                          SessionState.EraseString(LastSceneSetupStateKey);
+                                          SessionState.EraseString(_LastSceneSetupStateKey);
 
                                           return;
                                     }
@@ -101,7 +101,7 @@ namespace OpalStudio.CustomToolbar.Editor.Utils
                               EditorSceneManager.RestoreSceneManagerSetup(sceneSetupsToRestore);
                         }
 
-                        SessionState.EraseString(LastSceneSetupStateKey);
+                        SessionState.EraseString(_LastSceneSetupStateKey);
                   }
             }
       }

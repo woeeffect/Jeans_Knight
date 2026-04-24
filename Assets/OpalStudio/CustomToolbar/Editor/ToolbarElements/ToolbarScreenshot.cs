@@ -10,7 +10,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
       sealed internal class ToolbarScreenshot : BaseToolbarElement
       {
             private GUIContent _buttonContent;
-            private const string ScreenshotFolderPath = "Screenshots";
+            private const string _ScreenshotFolderPath = "Screenshots";
 
             protected override string Name => "Screenshot";
             protected override string Tooltip => "Screenshot options";
@@ -57,7 +57,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
             {
                   EnsureFolderExists();
 
-                  Application.OpenURL(Path.GetFullPath(ScreenshotFolderPath));
+                  Application.OpenURL(Path.GetFullPath(_ScreenshotFolderPath));
             }
 
             private static void CaptureGameView(int resolutionMultiplier)
@@ -167,9 +167,9 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
 
             private static void EnsureFolderExists()
             {
-                  if (!Directory.Exists(ScreenshotFolderPath))
+                  if (!Directory.Exists(_ScreenshotFolderPath))
                   {
-                        Directory.CreateDirectory(ScreenshotFolderPath);
+                        Directory.CreateDirectory(_ScreenshotFolderPath);
                   }
             }
 
@@ -177,7 +177,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
             {
                   string timestamp = $"{DateTimeOffset.Now:yyyy-MM-dd_HH-mm-ss}";
 
-                  return Path.Combine(ScreenshotFolderPath, $"{prefix}_{timestamp}.png");
+                  return Path.Combine(_ScreenshotFolderPath, $"{prefix}_{timestamp}.png");
             }
 
             private static void LogScreenshot(string path)

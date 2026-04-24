@@ -19,12 +19,12 @@ namespace OpalStudio.CustomToolbar.Editor.Settings
             }
 
             // Constants
-            private const float HeaderHeight = 40f;
-            private const float RowHeight = 22f;
-            private const float IndentWidth = 15f;
+            private const float _HeaderHeight = 40f;
+            private const float _RowHeight = 22f;
+            private const float _IndentWidth = 15f;
 
             // Regex cache
-            private readonly static Regex CleanNameRegex = new(@"\s+[_%#&].*$", RegexOptions.Compiled);
+            private readonly static Regex _CleanNameRegex = new(@"\s+[_%#&].*$", RegexOptions.Compiled);
 
             // Fields
             private Node _rootNode;
@@ -68,7 +68,7 @@ namespace OpalStudio.CustomToolbar.Editor.Settings
                         _hoveredRect = Rect.zero;
                   }
 
-                  GUILayout.Space(HeaderHeight);
+                  GUILayout.Space(_HeaderHeight);
 
                   DrawContent();
 
@@ -84,7 +84,7 @@ namespace OpalStudio.CustomToolbar.Editor.Settings
 
             private void DrawHeader()
             {
-                  var headerRect = new Rect(0, 0, this.position.width, HeaderHeight);
+                  var headerRect = new Rect(0, 0, this.position.width, _HeaderHeight);
                   EditorGUI.DrawRect(headerRect, _headerColor);
 
                   var searchRect = new Rect(headerRect.x + 10, headerRect.y + 10, headerRect.width - 20, 20);
@@ -110,7 +110,7 @@ namespace OpalStudio.CustomToolbar.Editor.Settings
                         return;
                   }
 
-                  Rect rowRect = EditorGUILayout.GetControlRect(false, RowHeight);
+                  Rect rowRect = EditorGUILayout.GetControlRect(false, _RowHeight);
 
                   if (rowRect.Contains(Event.current.mousePosition))
                   {
@@ -122,7 +122,7 @@ namespace OpalStudio.CustomToolbar.Editor.Settings
                         EditorGUI.DrawRect(rowRect, _hoverColor);
                   }
 
-                  var controlRect = new Rect(rowRect.x + indentLevel * IndentWidth, rowRect.y, rowRect.width - indentLevel * IndentWidth, rowRect.height);
+                  var controlRect = new Rect(rowRect.x + indentLevel * _IndentWidth, rowRect.y, rowRect.width - indentLevel * _IndentWidth, rowRect.height);
 
                   if (node.Children.Any())
                   {
@@ -246,7 +246,7 @@ namespace OpalStudio.CustomToolbar.Editor.Settings
 
             private static string CleanMenuItemName(string name)
             {
-                  return CleanNameRegex.Replace(name, "").Trim();
+                  return _CleanNameRegex.Replace(name, "").Trim();
             }
       }
 }

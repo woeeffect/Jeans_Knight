@@ -9,37 +9,37 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.SceneBookmarks.Data
 {
       public sealed class SceneBookmarksManager : ScriptableObject
       {
-            private const string AssetPath = "Assets/Settings/CustomToolbar/SceneBookmarks.asset";
+            private const string _AssetPath = "Assets/Settings/CustomToolbar/SceneBookmarks.asset";
 
             [SerializeField]
-            private List<SceneBookmarkData> allScenesData = new();
+            private List<SceneBookmarkData> _allScenesData = new();
 
             [SerializeField]
-            private List<SceneBookmark> legacyBookmarks = new();
+            private List<SceneBookmark> _legacyBookmarks = new();
 
-            private static SceneBookmarksManager instance;
+            private static SceneBookmarksManager _instance;
             public static SceneBookmarksManager Instance
             {
                   get
                   {
-                        if (instance == null)
+                        if (_instance == null)
                         {
-                              instance = AssetDatabase.LoadAssetAtPath<SceneBookmarksManager>(AssetPath);
+                              _instance = AssetDatabase.LoadAssetAtPath<SceneBookmarksManager>(_AssetPath);
 
-                              if (instance == null)
+                              if (_instance == null)
                               {
-                                    instance = CreateInstance<SceneBookmarksManager>();
-                                    Directory.CreateDirectory(Path.GetDirectoryName(AssetPath)!);
-                                    AssetDatabase.CreateAsset(instance, AssetPath);
+                                    _instance = CreateInstance<SceneBookmarksManager>();
+                                    Directory.CreateDirectory(Path.GetDirectoryName(_AssetPath)!);
+                                    AssetDatabase.CreateAsset(_instance, _AssetPath);
                                     AssetDatabase.SaveAssets();
                               }
                               else
                               {
-                                    instance.MigrateLegacyBookmarks();
+                                    _instance.MigrateLegacyBookmarks();
                               }
                         }
 
-                        return instance;
+                        return _instance;
                   }
             }
 
@@ -52,12 +52,12 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.SceneBookmarks.Data
                         return null;
                   }
 
-                  SceneBookmarkData sceneData = allScenesData.Find(data => data.sceneGuid == currentSceneGuid);
+                  SceneBookmarkData sceneData = _allScenesData.Find(data => data.sceneGuid == currentSceneGuid);
 
                   if (sceneData == null)
                   {
                         sceneData = new SceneBookmarkData(currentSceneGuid);
-                        allScenesData.Add(sceneData);
+                        _allScenesData.Add(sceneData);
                   }
 
                   return sceneData;
@@ -208,7 +208,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.SceneBookmarks.Data
 
             private void MigrateLegacyBookmarks()
             {
-                  if (legacyBookmarks.Count > 0)
+                  if (_legacyBookmarks.Count > 0)
                   {
                         string currentSceneGuid = GetCurrentSceneGuid();
 
@@ -218,16 +218,16 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.SceneBookmarks.Data
 
                               if (sceneData != null)
                               {
-                                    foreach (SceneBookmark legacyBookmark in legacyBookmarks)
+                                    foreach (SceneBookmark legacyBookmark in _legacyBookmarks)
                                     {
                                           legacyBookmark.groupId = "";
                                           sceneData.bookmarks.Add(legacyBookmark);
                                     }
 
-                                    legacyBookmarks.Clear();
+                                    _legacyBookmarks.Clear();
                                     Save();
 
-                                    Debug.Log($"Migrated {legacyBookmarks.Count} legacy bookmarks to current scene.");
+                                    Debug.Log($"Migrated {_legacyBookmarks.Count} legacy bookmarks to current scene.");
                               }
                         }
                   }

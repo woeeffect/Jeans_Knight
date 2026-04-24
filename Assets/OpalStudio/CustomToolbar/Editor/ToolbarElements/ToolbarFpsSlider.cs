@@ -5,12 +5,12 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
 {
       sealed internal class ToolbarFpsSlider : BaseToolbarElement
       {
-            private const int MinFpsValue = 0;
-            private const int MaxFpsValue = 600;
-            private const string ToolbarFpsSliderKey = "CustomToolbar.ToolbarFpsSlider.Value";
+            private const int _MinFpsValue = 0;
+            private const int _MaxFpsValue = 600;
+            private const string _ToolbarFpsSliderKey = "CustomToolbar.ToolbarFpsSlider.Value";
 
-            private int currentFPS;
-            private GUIContent buttonContent;
+            private int _currentFPS;
+            private GUIContent _buttonContent;
 
             protected override string Name => "FPS Slider";
             protected override string Tooltip => "Controls Application.targetFrameRate. Set to 0 for unlimited FPS.";
@@ -18,28 +18,29 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
             public override void OnInit()
             {
                   this.Width = 200;
-                  buttonContent = new GUIContent("FPS", this.Tooltip);
+                  _buttonContent = new GUIContent("FPS", this.Tooltip);
 
-                  currentFPS = EditorPrefs.GetInt(ToolbarFpsSliderKey, 0);
+                  _currentFPS = EditorPrefs.GetInt(_ToolbarFpsSliderKey, 0);
 
-                  Application.targetFrameRate = currentFPS;
+                  Application.targetFrameRate = _currentFPS;
             }
 
             public override void OnDrawInToolbar()
             {
-                  buttonContent.text = currentFPS == MinFpsValue ? "FPS (∞)" : "FPS";
+                  _buttonContent.text = _currentFPS == _MinFpsValue ? "FPS (∞)" : "FPS";
 
-                  EditorGUILayout.LabelField(buttonContent, GUILayout.Width(25));
+                  EditorGUILayout.LabelField(_buttonContent, GUILayout.Width(25));
 
                   EditorGUI.BeginChangeCheck();
 
-                  currentFPS = Mathf.RoundToInt(EditorGUILayout.Slider(currentFPS, MinFpsValue, MaxFpsValue, GUILayout.Width(this.Width - 65)));
+                  _currentFPS = Mathf.RoundToInt(EditorGUILayout.Slider(_currentFPS, _MinFpsValue, _MaxFpsValue, GUILayout.Width(this.Width - 65)));
 
                   if (EditorGUI.EndChangeCheck())
                   {
-                        Application.targetFrameRate = (currentFPS == MinFpsValue) ? -1 : currentFPS;
-                        EditorPrefs.SetInt(ToolbarFpsSliderKey, currentFPS);
+                        Application.targetFrameRate = (_currentFPS == _MinFpsValue) ? -1 : _currentFPS;
+                        EditorPrefs.SetInt(_ToolbarFpsSliderKey, _currentFPS);
                   }
             }
       }
 }
+

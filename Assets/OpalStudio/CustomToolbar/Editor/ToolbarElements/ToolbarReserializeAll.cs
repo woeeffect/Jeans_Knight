@@ -7,7 +7,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
 {
       sealed internal class ToolbarReserializeAll : BaseToolbarElement
       {
-            private GUIContent buttonContent;
+            private GUIContent _buttonContent;
 
             protected override string Name => "Reserialize All Assets";
             protected override string Tooltip => "Forces a re-serialization of all assets in the project. Useful after a Unity upgrade or to fix serialization errors.";
@@ -16,7 +16,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
             {
                   Texture icon = EditorGUIUtility.IconContent("d_Refresh").image;
 
-                  buttonContent = new GUIContent(icon, this.Tooltip);
+                  _buttonContent = new GUIContent(icon, this.Tooltip);
             }
 
             public override void OnDrawInToolbar()
@@ -25,7 +25,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
 
                   using (new EditorGUI.DisabledScope(!this.Enabled))
                   {
-                        if (GUILayout.Button(buttonContent, ToolbarStyles.CommandButtonStyle, GUILayout.Width(this.Width)))
+                        if (GUILayout.Button(_buttonContent, ToolbarStyles.CommandButtonStyle, GUILayout.Width(this.Width)))
                         {
                               Debug.Log("Starting to force reserialize all assets...");
                               SerializeAssetsUtils.ForceReserializeAllAssets();

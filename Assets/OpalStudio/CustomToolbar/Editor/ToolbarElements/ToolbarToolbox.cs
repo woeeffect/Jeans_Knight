@@ -13,19 +13,19 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
 {
       sealed internal class ToolbarToolbox : BaseToolbarElement
       {
-            private GUIContent buttonContent;
+            private GUIContent _buttonContent;
             protected override string Name => "Toolbox";
             protected override string Tooltip => "Custom toolbox shortcuts";
 
             public override void OnInit()
             {
                   Texture icon = EditorGUIUtility.IconContent("d_Toolbar Plus More").image;
-                  buttonContent = new GUIContent(icon, this.Tooltip);
+                  _buttonContent = new GUIContent(icon, this.Tooltip);
             }
 
             public override void OnDrawInToolbar()
             {
-                  if (EditorGUILayout.DropdownButton(buttonContent, FocusType.Passive, ToolbarStyles.CommandButtonStyle, GUILayout.Width(this.Width)))
+                  if (EditorGUILayout.DropdownButton(_buttonContent, FocusType.Passive, ToolbarStyles.CommandButtonStyle, GUILayout.Width(this.Width)))
                   {
                         GenerateMenu().ShowAsContext();
                   }

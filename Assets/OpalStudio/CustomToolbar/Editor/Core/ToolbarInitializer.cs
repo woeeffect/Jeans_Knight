@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using OpalStudio.CustomToolbar.Editor.Core.Data;
@@ -17,8 +17,8 @@ namespace OpalStudio.CustomToolbar.Editor.Core
       [InitializeOnLoad]
       public static class ToolbarInitializer
       {
-            private readonly static List<BaseToolbarElement> LeftElements = new();
-            private readonly static List<BaseToolbarElement> RightElements = new();
+            private readonly static List<BaseToolbarElement> _LeftElements = new();
+            private readonly static List<BaseToolbarElement> _RightElements = new();
 
             static ToolbarInitializer()
             {
@@ -27,8 +27,8 @@ namespace OpalStudio.CustomToolbar.Editor.Core
                   CreateElementsFromConfig(config);
 
                   // Register the toolbar drawing callbacks
-                  ToolbarCallback.OnToolbarGUILeftOfCenter = DrawToolbar(LeftElements, true);
-                  ToolbarCallback.OnToolbarGUIRightOfCenter = DrawToolbar(RightElements, false);
+                  ToolbarCallback.OnToolbarGUILeftOfCenter = DrawToolbar(_LeftElements, true);
+                  ToolbarCallback.OnToolbarGUIRightOfCenter = DrawToolbar(_RightElements, false);
 
                   SubscribeToEditorEvents();
 
@@ -45,7 +45,7 @@ namespace OpalStudio.CustomToolbar.Editor.Core
                   // Process each enabled group in the configuration
                   foreach (ToolbarGroup group in config.groups.Where(static g => g.isEnabled))
                   {
-                        List<BaseToolbarElement> targetList = group.side == ToolbarSide.Left ? LeftElements : RightElements;
+                        List<BaseToolbarElement> targetList = group.side == ToolbarSide.Left ? _LeftElements : _RightElements;
 
                         targetList.Add(new ToolbarSpace());
 
@@ -64,14 +64,14 @@ namespace OpalStudio.CustomToolbar.Editor.Core
                   }
 
                   // Add trailing spaces to both sides if they contain any elements
-                  if (LeftElements.Any())
+                  if (_LeftElements.Any())
                   {
-                        LeftElements.Add(new ToolbarSpace());
+                        _LeftElements.Add(new ToolbarSpace());
                   }
 
-                  if (RightElements.Any())
+                  if (_RightElements.Any())
                   {
-                        RightElements.Add(new ToolbarSpace());
+                        _RightElements.Add(new ToolbarSpace());
                   }
             }
 
@@ -100,7 +100,7 @@ namespace OpalStudio.CustomToolbar.Editor.Core
             private static void SubscribeToEditorEvents()
             {
                   // Combine all toolbar elements from both sides into a single collection
-                  List<BaseToolbarElement> allElements = LeftElements.Concat(RightElements).ToList();
+                  List<BaseToolbarElement> allElements = _LeftElements.Concat(_RightElements).ToList();
 
                   if (!allElements.Any())
                   {

@@ -51,10 +51,10 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.Favorites.Window
 
             public event Action OnFavoritesChanged;
 
-            private const float CardHeight = 48f;
-            private const float IconSize = 40f;
-            private const float Padding = 4f;
-            private const float IconTextSpacing = 8f;
+            private const float _CardHeight = 48f;
+            private const float _IconSize = 40f;
+            private const float _Padding = 4f;
+            private const float _IconTextSpacing = 8f;
 
 #endregion
 
@@ -390,7 +390,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.Favorites.Window
                         return;
                   }
 
-                  Rect dropArea = GUILayoutUtility.GetRect(0, _filteredFavorites.Count * (CardHeight + Padding) + Padding * 2, GUILayout.ExpandWidth(true));
+                  Rect dropArea = GUILayoutUtility.GetRect(0, _filteredFavorites.Count * (_CardHeight + _Padding) + _Padding * 2, GUILayout.ExpandWidth(true));
                   GUI.Box(dropArea, GUIContent.none, _listBackgroundStyle);
 
                   if (_filteredFavorites.Count == 0)
@@ -415,7 +415,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.Favorites.Window
                   {
                         CachedFavorite cachedItem = _filteredFavorites[i];
 
-                        var cardRect = new Rect(dropArea.x + Padding, dropArea.y + Padding + i * (CardHeight + Padding), dropArea.width - Padding * 2, CardHeight);
+                        var cardRect = new Rect(dropArea.x + _Padding, dropArea.y + _Padding + i * (_CardHeight + _Padding), dropArea.width - _Padding * 2, _CardHeight);
                         DrawItemCard(cardRect, cachedItem, i);
                   }
             }
@@ -459,14 +459,14 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.Favorites.Window
 
             private void DrawCardContent(Rect cardRect, CachedFavorite cachedItem, int index)
             {
-                  var iconRect = new Rect(cardRect.x + Padding, cardRect.y + (cardRect.height - IconSize) / 2, IconSize, IconSize);
+                  var iconRect = new Rect(cardRect.x + _Padding, cardRect.y + (cardRect.height - _IconSize) / 2, _IconSize, _IconSize);
 
                   if (cachedItem.AssetIcon)
                   {
                         GUI.DrawTexture(iconRect, cachedItem.AssetIcon);
                   }
 
-                  var textBlockRect = new Rect(iconRect.xMax + IconTextSpacing, cardRect.y, cardRect.width - IconSize - Padding * 2 - IconTextSpacing, cardRect.height);
+                  var textBlockRect = new Rect(iconRect.xMax + _IconTextSpacing, cardRect.y, cardRect.width - _IconSize - _Padding * 2 - _IconTextSpacing, cardRect.height);
 
                   if (_editingAliasIndex == index)
                   {
@@ -492,8 +492,8 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.Favorites.Window
                   }
 
                   float y = _reorderDropIndex < _filteredFavorites.Count
-                              ? dropArea.y + Padding + _reorderDropIndex * (CardHeight + Padding) - Padding / 2f
-                              : dropArea.y + Padding + _filteredFavorites.Count * (CardHeight + Padding) - Padding / 2f;
+                              ? dropArea.y + _Padding + _reorderDropIndex * (_CardHeight + _Padding) - _Padding / 2f
+                              : dropArea.y + _Padding + _filteredFavorites.Count * (_CardHeight + _Padding) - _Padding / 2f;
 
                   var indicatorRect = new Rect(dropArea.x, y - 1, dropArea.width, 2);
                   EditorGUI.DrawRect(indicatorRect, Color.cyan);

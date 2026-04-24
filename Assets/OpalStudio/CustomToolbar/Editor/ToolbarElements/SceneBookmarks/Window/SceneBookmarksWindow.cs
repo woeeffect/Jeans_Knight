@@ -12,7 +12,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.SceneBookmarks.Window
             private SceneBookmarksManager _manager;
             private Vector2 _scrollPosition;
             private string _newBookmarkName = "New Bookmark";
-            private const string NewGroupName = "New Group";
+            private const string _NewGroupName = "New Group";
 
             private GUIStyle _headerBackgroundStyle;
             private GUIStyle _cardStyle;
@@ -26,17 +26,17 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.SceneBookmarks.Window
             private GUIContent _downIcon;
             private GUIContent _folderIcon;
             private GUIContent _addIcon;
-            private static bool useSmoothTransition = true;
-            private static bool isTransitioning;
+            private static bool _useSmoothTransition = true;
+            private static bool _isTransitioning;
 
             private bool _stylesInitialized;
 
-            private static float transitionStartTime;
-            private const float TransitionDuration = 0.5f;
-            private static SceneBookmark targetBookmark;
-            private static Vector3 startPivot;
-            private static Quaternion startRotation;
-            private static float startSize;
+            private static float _transitionStartTime;
+            private const float _TransitionDuration = 0.5f;
+            private static SceneBookmark _targetBookmark;
+            private static Vector3 _startPivot;
+            private static Quaternion _startRotation;
+            private static float _startSize;
 
             public static void ShowWindow()
             {
@@ -307,9 +307,9 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.SceneBookmarks.Window
 
             private void ShowCreateGroupDialog()
             {
-                  string groupName = EditorInputDialog.Show("Create New Group", "Group name:", NewGroupName);
+                  string groupName = EditorInputDialog.Show("Create New Group", "Group name:", _NewGroupName);
 
-                  if (!string.IsNullOrEmpty(groupName) && groupName != NewGroupName)
+                  if (!string.IsNullOrEmpty(groupName) && groupName != _NewGroupName)
                   {
                         _manager.CreateGroup(groupName);
                   }
@@ -349,8 +349,8 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.SceneBookmarks.Window
                   EditorGUILayout.BeginHorizontal(EditorStyles.toolbar);
 
                   Color originalColor = GUI.backgroundColor;
-                  GUI.backgroundColor = useSmoothTransition ? new Color(0.4f, 1f, 0.6f) : new Color(1f, 0.6f, 0.6f);
-                  useSmoothTransition = GUILayout.Toggle(useSmoothTransition, "Smooth Transition", _toggleButtonStyle);
+                  GUI.backgroundColor = _useSmoothTransition ? new Color(0.4f, 1f, 0.6f) : new Color(1f, 0.6f, 0.6f);
+                  _useSmoothTransition = GUILayout.Toggle(_useSmoothTransition, "Smooth Transition", _toggleButtonStyle);
                   GUI.backgroundColor = originalColor;
 
                   GUILayout.FlexibleSpace();
@@ -389,20 +389,20 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.SceneBookmarks.Window
             {
                   var sceneView = SceneView.lastActiveSceneView;
 
-                  if (!sceneView || isTransitioning)
+                  if (!sceneView || _isTransitioning)
                   {
                         return;
                   }
 
-                  if (useSmoothTransition)
+                  if (_useSmoothTransition)
                   {
                         EditorApplication.update += SmoothTransitionUpdate;
-                        transitionStartTime = (float)EditorApplication.timeSinceStartup;
-                        startPivot = sceneView.pivot;
-                        startRotation = sceneView.rotation;
-                        startSize = sceneView.size;
-                        targetBookmark = bookmark;
-                        isTransitioning = true;
+                        _transitionStartTime = (float)EditorApplication.timeSinceStartup;
+                        _startPivot = sceneView.pivot;
+                        _startRotation = sceneView.rotation;
+                        _startSize = sceneView.size;
+                        _targetBookmark = bookmark;
+                        _isTransitioning = true;
                   }
                   else
                   {
@@ -457,23 +457,23 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements.SceneBookmarks.Window
                   if (sceneView == null)
                   {
                         EditorApplication.update -= SmoothTransitionUpdate;
-                        isTransitioning = false;
+                        _isTransitioning = false;
 
                         return;
                   }
 
-                  float t = (float)(EditorApplication.timeSinceStartup - transitionStartTime) / TransitionDuration;
+                  float t = (float)(EditorApplication.timeSinceStartup - _transitionStartTime) / _TransitionDuration;
                   t = Mathf.SmoothStep(0.0f, 1.0f, t);
 
-                  sceneView.pivot = Vector3.Lerp(startPivot, targetBookmark.pivot, t);
-                  sceneView.rotation = Quaternion.Slerp(startRotation, targetBookmark.rotation, t);
-                  sceneView.size = Mathf.Lerp(startSize, targetBookmark.size, t);
+                  sceneView.pivot = Vector3.Lerp(_startPivot, _targetBookmark.pivot, t);
+                  sceneView.rotation = Quaternion.Slerp(_startRotation, _targetBookmark.rotation, t);
+                  sceneView.size = Mathf.Lerp(_startSize, _targetBookmark.size, t);
                   sceneView.Repaint();
 
                   if (t >= 1.0f)
                   {
                         EditorApplication.update -= SmoothTransitionUpdate;
-                        isTransitioning = false;
+                        _isTransitioning = false;
                   }
             }
 

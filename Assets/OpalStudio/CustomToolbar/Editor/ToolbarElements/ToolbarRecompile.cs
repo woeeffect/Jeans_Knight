@@ -7,7 +7,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
 {
       sealed internal class ToolbarRecompile : BaseToolbarElement
       {
-            private GUIContent buttonContent;
+            private GUIContent _buttonContent;
 
             protected override string Name => "Recompile Scripts";
             protected override string Tooltip => "Request a manual script compilation.";
@@ -16,7 +16,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
             {
                   Texture icon = EditorGUIUtility.IconContent("d_debug").image;
 
-                  buttonContent = new GUIContent(icon, this.Tooltip);
+                  _buttonContent = new GUIContent(icon, this.Tooltip);
             }
 
             public override void OnDrawInToolbar()
@@ -25,7 +25,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
 
                   using (new EditorGUI.DisabledScope(!this.Enabled))
                   {
-                        if (GUILayout.Button(buttonContent, ToolbarStyles.CommandButtonStyle, GUILayout.Width(this.Width)))
+                        if (GUILayout.Button(_buttonContent, ToolbarStyles.CommandButtonStyle, GUILayout.Width(this.Width)))
                         {
                               CompilationPipeline.RequestScriptCompilation();
                         }

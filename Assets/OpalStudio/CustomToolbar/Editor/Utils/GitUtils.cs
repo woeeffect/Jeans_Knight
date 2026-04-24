@@ -10,12 +10,12 @@ namespace OpalStudio.CustomToolbar.Editor.Utils
 {
       public static class GitUtils
       {
-            private static bool? isGitInstalled;
+            private static bool? _isGitInstalled;
             public static bool IsGitInstalled
             {
                   get
                   {
-                        if (isGitInstalled == null)
+                        if (_isGitInstalled == null)
                         {
                               try
                               {
@@ -33,15 +33,15 @@ namespace OpalStudio.CustomToolbar.Editor.Utils
                                     };
                                     process.Start();
                                     process.WaitForExit();
-                                    isGitInstalled = process.ExitCode == 0;
+                                    _isGitInstalled = process.ExitCode == 0;
                               }
                               catch
                               {
-                                    isGitInstalled = false;
+                                    _isGitInstalled = false;
                               }
                         }
 
-                        return isGitInstalled.Value;
+                        return _isGitInstalled.Value;
                   }
             }
 

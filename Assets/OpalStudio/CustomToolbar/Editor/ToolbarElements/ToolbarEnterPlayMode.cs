@@ -9,9 +9,9 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
       sealed internal class ToolbarEnterPlayMode : BaseToolbarElement
       {
             private List<(string name, EnterPlayModeOptions? value)> availableOptions;
-            private int selectedOptionIndex;
+            private int _selectedOptionIndex;
 
-            private GUIContent buttonContent;
+            private GUIContent _buttonContent;
 
             protected override string Name => "Play Mode Options";
             protected override string Tooltip => "Configure 'Enter Play Mode' settings for faster iteration (Domain/Scene Reload).";
@@ -19,7 +19,7 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
             public override void OnInit()
             {
                   this.Width = 150;
-                  buttonContent = new GUIContent("", this.Tooltip);
+                  _buttonContent = new GUIContent("", this.Tooltip);
 
                   if (availableOptions == null)
                   {
@@ -39,21 +39,21 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
                         }
                   }
 
-                  selectedOptionIndex = EditorSettings.enterPlayModeOptionsEnabled
+                  _selectedOptionIndex = EditorSettings.enterPlayModeOptionsEnabled
                               ? availableOptions.FindIndex(static x => x.value == EditorSettings.enterPlayModeOptions)
                               : 0;
             }
 
             public override void OnDrawInToolbar()
             {
-                  if (selectedOptionIndex < 0 || selectedOptionIndex >= availableOptions.Count)
+                  if (_selectedOptionIndex < 0 || _selectedOptionIndex >= availableOptions.Count)
                   {
-                        selectedOptionIndex = 0;
+                        _selectedOptionIndex = 0;
                   }
 
-                  buttonContent.text = availableOptions[selectedOptionIndex].name;
+                  _buttonContent.text = availableOptions[_selectedOptionIndex].name;
 
-                  if (EditorGUILayout.DropdownButton(buttonContent, FocusType.Keyboard, ToolbarStyles.CommandPopupStyle, GUILayout.Width(this.Width)))
+                  if (EditorGUILayout.DropdownButton(_buttonContent, FocusType.Keyboard, ToolbarStyles.CommandPopupStyle, GUILayout.Width(this.Width)))
                   {
                         var menu = new GenericMenu();
 
@@ -62,9 +62,9 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
                               int index = i;
                               (string name, EnterPlayModeOptions? value) option = availableOptions[index];
 
-                              menu.AddItem(new GUIContent(option.name), selectedOptionIndex == index, () =>
+                              menu.AddItem(new GUIContent(option.name), _selectedOptionIndex == index, () =>
                               {
-                                    selectedOptionIndex = index;
+                                    _selectedOptionIndex = index;
 
                                     if (option.value == null)
                                     {

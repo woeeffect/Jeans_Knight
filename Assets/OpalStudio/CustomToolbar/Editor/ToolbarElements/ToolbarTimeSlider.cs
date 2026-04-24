@@ -5,12 +5,12 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
 {
       sealed internal class ToolbarTimeSlider : BaseToolbarElement
       {
-            private const float MinTimeScale = 0f;
-            private const float MaxTimeScale = 10f;
-            private const string ToolbarTimeSliderKey = "CustomToolbar.ToolbarTimeSlider.Value";
+            private const float _MinTimeScale = 0f;
+            private const float _MaxTimeScale = 10f;
+            private const string _ToolbarTimeSliderKey = "CustomToolbar.ToolbarTimeSlider.Value";
 
-            private float currentTimeScale;
-            private GUIContent buttonContent;
+            private float _currentTimeScale;
+            private GUIContent _buttonContent;
 
             protected override string Name => "Timescale Slider";
             protected override string Tooltip => "Controls Time.timeScale to slow down or speed up the game.";
@@ -19,19 +19,19 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
             {
                   this.Width = 200;
 
-                  currentTimeScale = EditorPrefs.GetFloat(ToolbarTimeSliderKey, 1.0f);
-                  Time.timeScale = currentTimeScale;
-                  buttonContent = new GUIContent("Time", this.Tooltip);
+                  _currentTimeScale = EditorPrefs.GetFloat(_ToolbarTimeSliderKey, 1.0f);
+                  Time.timeScale = _currentTimeScale;
+                  _buttonContent = new GUIContent("Time", this.Tooltip);
             }
 
             public override void OnPlayModeStateChanged(PlayModeStateChange state)
             {
                   if (state is PlayModeStateChange.ExitingPlayMode or PlayModeStateChange.EnteredEditMode)
                   {
-                        currentTimeScale = 1.0f;
-                        Time.timeScale = currentTimeScale;
+                        _currentTimeScale = 1.0f;
+                        Time.timeScale = _currentTimeScale;
 
-                        EditorPrefs.SetFloat(ToolbarTimeSliderKey, currentTimeScale);
+                        EditorPrefs.SetFloat(_ToolbarTimeSliderKey, _currentTimeScale);
                   }
 
                   this.Enabled = (state == PlayModeStateChange.EnteredPlayMode);
@@ -41,17 +41,17 @@ namespace OpalStudio.CustomToolbar.Editor.ToolbarElements
             {
                   using (new EditorGUI.DisabledScope(!this.Enabled))
                   {
-                        EditorGUILayout.LabelField(buttonContent, GUILayout.Width(35));
+                        EditorGUILayout.LabelField(_buttonContent, GUILayout.Width(35));
 
                         EditorGUI.BeginChangeCheck();
 
-                        currentTimeScale = EditorGUILayout.Slider(currentTimeScale, MinTimeScale, MaxTimeScale, GUILayout.Width(this.Width - 40));
+                        _currentTimeScale = EditorGUILayout.Slider(_currentTimeScale, _MinTimeScale, _MaxTimeScale, GUILayout.Width(this.Width - 40));
 
                         if (EditorGUI.EndChangeCheck())
                         {
-                              Time.timeScale = currentTimeScale;
+                              Time.timeScale = _currentTimeScale;
 
-                              EditorPrefs.SetFloat(ToolbarTimeSliderKey, currentTimeScale);
+                              EditorPrefs.SetFloat(_ToolbarTimeSliderKey, _currentTimeScale);
                         }
                   }
             }

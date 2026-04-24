@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
@@ -19,8 +19,8 @@ namespace OpalStudio.CustomToolbar.Editor.Core
             public static Action OnToolbarGUIRightOfCenter;
 
 #if UNITY_6000_3_OR_NEWER
-            private static int setupAttempts;
-            private const int MaxSetupAttempts = 200;
+            private static int _setupAttempts;
+            private const int _MaxSetupAttempts = 200;
 
             static ToolbarCallback()
             {
@@ -30,7 +30,7 @@ namespace OpalStudio.CustomToolbar.Editor.Core
 
             private static void Initialize()
             {
-                  setupAttempts++;
+                  _setupAttempts++;
 
                   Type mainToolbarWindowType = typeof(UnityEditor.Editor).Assembly.GetType("UnityEditor.MainToolbarWindow");
 
@@ -45,7 +45,7 @@ namespace OpalStudio.CustomToolbar.Editor.Core
 
                   if (toolbars.Length == 0)
                   {
-                        if (setupAttempts > MaxSetupAttempts)
+                        if (_setupAttempts > _MaxSetupAttempts)
                         {
                               Debug.LogWarning("[CustomToolbar] Could not find MainToolbarWindow instance after multiple attempts. Aborting.");
                               EditorApplication.update -= Initialize;
@@ -68,7 +68,7 @@ namespace OpalStudio.CustomToolbar.Editor.Core
 
                   if (middleContainer == null)
                   {
-                        if (setupAttempts > MaxSetupAttempts)
+                        if (_setupAttempts > _MaxSetupAttempts)
                         {
                               Debug.LogWarning("[CustomToolbar] Found MainToolbarWindow, but its middle-container is not ready. Aborting.");
                               EditorApplication.update -= Initialize;
@@ -122,9 +122,9 @@ namespace OpalStudio.CustomToolbar.Editor.Core
             }
 
 #else
-            private readonly static Type UnityToolbarType = typeof(UnityEditor.Editor).Assembly.GetType("UnityEditor.Toolbar");
-            private readonly static FieldInfo UnityToolbarRootField = UnityToolbarType?.GetField("m_Root", BindingFlags.NonPublic | BindingFlags.Instance);
-            private static ScriptableObject currentToolbar;
+            private readonly static Type _UnityToolbarType = typeof(UnityEditor.Editor).Assembly.GetType("UnityEditor.Toolbar");
+            private readonly static FieldInfo _UnityToolbarRootField = _UnityToolbarType?.GetField("m_Root", BindingFlags.NonPublic | BindingFlags.Instance);
+            private static ScriptableObject _currentToolbar;
 
             static ToolbarCallback()
             {
@@ -134,16 +134,16 @@ namespace OpalStudio.CustomToolbar.Editor.Core
 
             private static void TryInitialize()
             {
-                  if (currentToolbar == null)
+                  if (_currentToolbar == null)
                   {
-                        Object[] toolbars = Resources.FindObjectsOfTypeAll(UnityToolbarType);
+                        Object[] toolbars = Resources.FindObjectsOfTypeAll(_UnityToolbarType);
 
                         if (toolbars.Length == 0)
                         {
                               return;
                         }
 
-                        currentToolbar = (ScriptableObject)toolbars[0];
+                        _currentToolbar = (ScriptableObject)toolbars[0];
                   }
 
                   InjectToolbarElements();
@@ -152,7 +152,7 @@ namespace OpalStudio.CustomToolbar.Editor.Core
 
             private static void InjectToolbarElements()
             {
-                  if (UnityToolbarRootField?.GetValue(currentToolbar) is not VisualElement root)
+                  if (_UnityToolbarRootField?.GetValue(_currentToolbar) is not VisualElement root)
                   {
                         return;
                   }
