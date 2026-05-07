@@ -4,7 +4,7 @@ namespace EventBusSystem
 {
     internal class SubscribersList<TSubscriber> where TSubscriber : class
     {
-        private bool m_NeedsCleanUp = false;
+        private bool _needsCleanUp = false;
 
         public bool Executing;
 
@@ -22,7 +22,7 @@ namespace EventBusSystem
                 var i = List.IndexOf(subscriber);
                 if (i >= 0)
                 {
-                    m_NeedsCleanUp = true;
+                    _needsCleanUp = true;
                     List[i] = null;
                 }
             }
@@ -34,13 +34,13 @@ namespace EventBusSystem
 
         public void Cleanup()
         {
-            if (!m_NeedsCleanUp)
+            if (!_needsCleanUp)
             {
                 return;
             }
 
             List.RemoveAll(s => s == null);
-            m_NeedsCleanUp = false;
+            _needsCleanUp = false;
         }
     }
 }

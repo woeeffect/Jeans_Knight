@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8652e73734a48614d8fe9fb71ee5065d, type: 3}
+  m_Name: RangedWeapon
+  m_EditorClassIdentifier: Assembly-CSharp::Combat.Data.RangedWeaponDataSO
+  displayName: 
+  icon: {fileID: 0}
+  maxStack: 1
+  _heldPrefab: {fileID: 6075739246449618482, guid: f75ebc849f7e9784297089fb5cf5b086, type: 3}
+  _category: 0
+  _damageType: 0
+  _baseDamage: 10
+  _staminaCost: 10
+  _comboWindow: 0.8
+  _combo: []
+  _projectilePrefab: {fileID: 2225091723995922182, guid: 343a29df2bcc7994ba861e0be864bc1f, type: 3}
+  _projectileSpeed: 18
+  _projectileLifetime: 3
+  _muzzleOffset: {x: 0, y: 0, z: 0}

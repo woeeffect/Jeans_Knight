@@ -6,7 +6,7 @@ namespace EventBusSystem
 {
     public static class EventBus
     {
-        private static Dictionary<Type, SubscribersList<IGlobalSubscriber>> s_Subscribers
+        private static Dictionary<Type, SubscribersList<IGlobalSubscriber>> _subscribers
             = new Dictionary<Type, SubscribersList<IGlobalSubscriber>>();
 
         public static void Subscribe(IGlobalSubscriber subscriber)
@@ -14,11 +14,11 @@ namespace EventBusSystem
             List<Type> subscriberTypes = EventBusHelper.GetSubscriberTypes(subscriber);
             foreach (Type t in subscriberTypes)
             {
-                if (!s_Subscribers.ContainsKey(t))
+                if (!_subscribers.ContainsKey(t))
                 {
-                    s_Subscribers[t] = new SubscribersList<IGlobalSubscriber>();
+                    _subscribers[t] = new SubscribersList<IGlobalSubscriber>();
                 }
-                s_Subscribers[t].Add(subscriber);
+                _subscribers[t].Add(subscriber);
             }
         }
 
@@ -27,15 +27,15 @@ namespace EventBusSystem
             List<Type> subscriberTypes = EventBusHelper.GetSubscriberTypes(subscriber);
             foreach (Type t in subscriberTypes)
             {
-                if (s_Subscribers.ContainsKey(t))
-                    s_Subscribers[t].Remove(subscriber);
+                if (_subscribers.ContainsKey(t))
+                    _subscribers[t].Remove(subscriber);
             }
         }
 
         public static void RaiseEvent<TSubscriber>(Action<TSubscriber> action)
             where TSubscriber : class, IGlobalSubscriber
         {
-            if (!s_Subscribers.TryGetValue(typeof(TSubscriber), out var subscribers))
+            if (!_subscribers.TryGetValue(typeof(TSubscriber), out var subscribers))
                 return;
 
             subscribers.Executing = true;

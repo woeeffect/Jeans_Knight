@@ -1,4 +1,5 @@
 using Input;
+using Inventory.Runtime;
 using Zenject;
 
 namespace Installers
@@ -8,6 +9,7 @@ namespace Installers
         public override void InstallBindings()
         {
             Container.BindInterfacesTo<InputService>().AsSingle();
+            Container.Bind<InventoryService>().AsSingle();
         }
     }
 }

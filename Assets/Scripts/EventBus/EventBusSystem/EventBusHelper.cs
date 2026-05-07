@@ -6,16 +6,16 @@ namespace EventBusSystem
 {
     internal static class EventBusHelper
     {
-        private static Dictionary<Type, List<Type>> s_CashedSubscriberTypes =
+        private static Dictionary<Type, List<Type>> _cachedSubscriberTypes =
             new Dictionary<Type, List<Type>>();
 
         public static List<Type> GetSubscriberTypes(
             IGlobalSubscriber globalSubscriber)
         {
             Type type = globalSubscriber.GetType();
-            if (s_CashedSubscriberTypes.ContainsKey(type))
+            if (_cachedSubscriberTypes.ContainsKey(type))
             {
-                return s_CashedSubscriberTypes[type];
+                return _cachedSubscriberTypes[type];
             }
 
             List<Type> subscriberTypes = type
@@ -24,7 +24,7 @@ namespace EventBusSystem
                     .Contains(typeof(IGlobalSubscriber)))
                 .ToList();
 
-            s_CashedSubscriberTypes[type] = subscriberTypes;
+            _cachedSubscriberTypes[type] = subscriberTypes;
             return subscriberTypes;
         }
     }

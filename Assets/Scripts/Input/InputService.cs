@@ -27,7 +27,10 @@ namespace Input
             _playerInput.Player.Run.performed += OnRunPerformed;
             _playerInput.Player.Run.canceled += OnRunCanceled;
             _playerInput.Player.Attack.performed += OnAttackPerformed;
-            _playerInput.Player.Jump.performed += OnJumpPerformed;
+            _playerInput.Player.Dodge.performed += OnDodgePerformed;
+            _playerInput.Player.Block.performed += OnBlockPerformed;
+            _playerInput.Player.Block.canceled += OnBlockCanceled;
+            _playerInput.Player.OpenInventory.performed += OnOpenInventoryPerformed;
         }
 
         public void Dispose()
@@ -39,7 +42,10 @@ namespace Input
             _playerInput.Player.Run.performed -= OnRunPerformed;
             _playerInput.Player.Run.canceled -= OnRunCanceled;
             _playerInput.Player.Attack.performed -= OnAttackPerformed;
-            _playerInput.Player.Jump.performed -= OnJumpPerformed;
+            _playerInput.Player.Dodge.performed -= OnDodgePerformed;
+            _playerInput.Player.Block.performed -= OnBlockPerformed;
+            _playerInput.Player.Block.canceled -= OnBlockCanceled;
+            _playerInput.Player.OpenInventory.performed -= OnOpenInventoryPerformed;
             InputSystem.onDeviceChange -= OnDeviceChange;
 
             _playerInput.Player.Disable();
@@ -80,24 +86,42 @@ namespace Input
             EventBus.RaiseEvent<IInputAttackHandler>(h => h.OnAttack());
         }
 
-        private void OnJumpPerformed(InputAction.CallbackContext ctx)
+        private void OnDodgePerformed(InputAction.CallbackContext ctx)
         {
             UpdateControlScheme(ctx.control?.device);
-            EventBus.RaiseEvent<IInputJumpHandler>(h => h.OnJump());
+            EventBus.RaiseEvent<IInputDodgeHandler>(h => h.OnDodge());
+        }
+
+        private void OnBlockPerformed(InputAction.CallbackContext ctx)
+        {
+            UpdateControlScheme(ctx.control?.device);
+            EventBus.RaiseEvent<IInputBlockHandler>(h => h.OnBlock(true));
+        }
+
+        private void OnBlockCanceled(InputAction.CallbackContext ctx)
+        {
+            UpdateControlScheme(ctx.control?.device);
+            EventBus.RaiseEvent<IInputBlockHandler>(h => h.OnBlock(false));
+        }
+
+        private void OnOpenInventoryPerformed(InputAction.CallbackContext ctx)
+        {
+            UpdateControlScheme(ctx.control?.device);
+            EventBus.RaiseEvent<IInputInventoryHandler>(h => h.OnOpenInventory());
         }
 
         private void OnDeviceChange(InputDevice device, InputDeviceChange change)
         {
-            if (!(device is Gamepad))
+            if (device is not Gamepad)
                 return;
 
-            if (change == InputDeviceChange.Added || change == InputDeviceChange.Reconnected)
+            if (change is InputDeviceChange.Added or InputDeviceChange.Reconnected)
             {
                 SwitchControlScheme(GamepadControlScheme);
                 return;
             }
 
-            if ((change == InputDeviceChange.Removed || change == InputDeviceChange.Disconnected)
+            if (change is InputDeviceChange.Removed or InputDeviceChange.Disconnected
                 && Gamepad.current == null)
             {
                 SwitchControlScheme(KeyboardMouseControlScheme);
@@ -123,7 +147,7 @@ namespace Input
                 return;
             }
 
-            if (device is Keyboard || device is Mouse)
+            if (device is Keyboard or Mouse)
             {
                 SwitchControlScheme(KeyboardMouseControlScheme);
             }
