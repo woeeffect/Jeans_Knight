@@ -48,12 +48,13 @@ MonoBehaviour:
     RefIds:
     - rid: 3563626294901473316
       type: {class: GetSpriteNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
     - rid: 3563626294901473317
       type: {class: GetColorColorsWhite, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
     - rid: 5178594379753324599
       type: {class: StatItem, ns: GameCreator.Runtime.Stats, asm: GameCreator.Runtime.Stats}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_IsHidden: 1
@@ -67,7 +68,6 @@ MonoBehaviour:
     - rid: 5178594379753324600
       type: {class: StatItem, ns: GameCreator.Runtime.Stats, asm: GameCreator.Runtime.Stats}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_IsHidden: 1
@@ -81,7 +81,6 @@ MonoBehaviour:
     - rid: 5178594379753324620
       type: {class: AttributeItem, ns: GameCreator.Runtime.Stats, asm: GameCreator.Runtime.Stats}
       data:
-        m_IsExpanded: 1
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_IsHidden: 0
@@ -92,7 +91,6 @@ MonoBehaviour:
     - rid: 5178594379753324621
       type: {class: AttributeItem, ns: GameCreator.Runtime.Stats, asm: GameCreator.Runtime.Stats}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_IsHidden: 0
@@ -103,7 +101,6 @@ MonoBehaviour:
     - rid: 5178594379753324624
       type: {class: StatItem, ns: GameCreator.Runtime.Stats, asm: GameCreator.Runtime.Stats}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_IsHidden: 0
@@ -117,7 +114,6 @@ MonoBehaviour:
     - rid: 5178594379753324625
       type: {class: StatItem, ns: GameCreator.Runtime.Stats, asm: GameCreator.Runtime.Stats}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_IsHidden: 0
@@ -131,7 +127,6 @@ MonoBehaviour:
     - rid: 5178594725893242897
       type: {class: AttributeItem, ns: GameCreator.Runtime.Stats, asm: GameCreator.Runtime.Stats}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_IsHidden: 0
@@ -142,7 +137,6 @@ MonoBehaviour:
     - rid: 5178594725893242898
       type: {class: StatItem, ns: GameCreator.Runtime.Stats, asm: GameCreator.Runtime.Stats}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_IsHidden: 1
@@ -156,7 +150,6 @@ MonoBehaviour:
     - rid: 5178594725893242922
       type: {class: StatItem, ns: GameCreator.Runtime.Stats, asm: GameCreator.Runtime.Stats}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_IsHidden: 0
@@ -170,7 +163,6 @@ MonoBehaviour:
     - rid: 5178594725893242923
       type: {class: StatItem, ns: GameCreator.Runtime.Stats, asm: GameCreator.Runtime.Stats}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_IsHidden: 0
@@ -184,7 +176,6 @@ MonoBehaviour:
     - rid: 5178594725893242924
       type: {class: StatItem, ns: GameCreator.Runtime.Stats, asm: GameCreator.Runtime.Stats}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_IsHidden: 0
@@ -198,7 +189,6 @@ MonoBehaviour:
     - rid: 5178594725893242925
       type: {class: StatItem, ns: GameCreator.Runtime.Stats, asm: GameCreator.Runtime.Stats}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_IsHidden: 0
@@ -212,7 +202,6 @@ MonoBehaviour:
     - rid: 5178594725893242926
       type: {class: StatItem, ns: GameCreator.Runtime.Stats, asm: GameCreator.Runtime.Stats}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_IsHidden: 0
@@ -226,7 +215,6 @@ MonoBehaviour:
     - rid: 5178594725893242927
       type: {class: StatItem, ns: GameCreator.Runtime.Stats, asm: GameCreator.Runtime.Stats}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_IsHidden: 0
@@ -240,7 +228,6 @@ MonoBehaviour:
     - rid: 5178594725893242928
       type: {class: StatItem, ns: GameCreator.Runtime.Stats, asm: GameCreator.Runtime.Stats}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_IsHidden: 0
