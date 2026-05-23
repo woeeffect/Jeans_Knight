@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Level_Table
   m_EditorClassIdentifier: 
   m_Table:
-    rid: 5178594379753324609
+    rid: 3874307873956168320
   references:
     version: 2
     RefIds:
-    - rid: 5178594379753324609
-      type: {class: TableLinearProgression, ns: GameCreator.Runtime.Stats, asm: GameCreator.Runtime.Stats}
+    - rid: 3874307873956168320
+      type: {class: TableGeometricProgression, ns: GameCreator.Runtime.Stats, asm: GameCreator.Runtime.Stats}
       data:
-        m_MaxLevel: 30
-        m_IncrementPerLevel: 50
+        m_MaxLevel: 99
+        m_Increment: 50
+        m_Rate: 1.05
