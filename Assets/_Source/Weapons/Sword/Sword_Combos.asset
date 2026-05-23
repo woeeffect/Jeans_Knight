@@ -158,7 +158,7 @@ MonoBehaviour:
             rid: 4340017089037992688
         m_HasDelay:
           m_IsEnabled: 0
-          m_Value: 0.5
+          m_Value: 0.1
         m_Conditions:
           m_Conditions:
             m_Conditions: []

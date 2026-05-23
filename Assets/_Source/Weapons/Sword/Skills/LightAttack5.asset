@@ -75,7 +75,7 @@ MonoBehaviour:
     m_HitPauseDelay: 0.1
     m_HitPauseDuration: 0.1
     m_TimeScale: 0
-  m_Animation: {fileID: 7400000, guid: 20a8f660829e84bcf924f5cb008d867d, type: 2}
+  m_Animation: {fileID: 7400000, guid: c78137fcedc5ac34eb998beb409a0004, type: 3}
   m_Mask: {fileID: 0}
   m_Motion: 2
   m_SyncReaction: {fileID: 0}
@@ -223,8 +223,8 @@ MonoBehaviour:
     - rid: 4340017088909803660
       type: {class: ClipMeleePhases, ns: GameCreator.Runtime.Melee, asm: GameCreator.Runtime.Melee}
       data:
-        m_Time: 0.46666667
-        m_Duration: 0.13333334
+        m_Time: 0.29166666
+        m_Duration: 0.25
     - rid: 4340017088909803661
       type: {class: ClipMeleeCancel, ns: GameCreator.Runtime.Melee, asm: GameCreator.Runtime.Melee}
       data:
@@ -282,15 +282,15 @@ MonoBehaviour:
     - rid: 4340017091051782440
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Value: 1.5
+        m_Value: 0.6
     - rid: 4340017091051782441
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Value: 1.2
+        m_Value: 0.5
     - rid: 4340017104564519072
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Value: 1.2
+        m_Value: 0.53
     - rid: 4340017104564519081
       type: {class: InstructionCameraShakeBurst, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
