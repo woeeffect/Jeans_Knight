@@ -286,7 +286,7 @@ MonoBehaviour:
     - rid: 4340017091051782433
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Value: 0.55
+        m_Value: 0.8
     - rid: 4340017104564519068
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:

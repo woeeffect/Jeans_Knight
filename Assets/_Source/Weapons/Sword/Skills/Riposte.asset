@@ -27,7 +27,9 @@ MonoBehaviour:
   m_Charge:
     m_State:
       m_StateType: 2
-      m_AnimationClip: {fileID: 0}
+      m_AnimationClip:
+        m_Property:
+          rid: 3874307875904421895
       m_RuntimeController: {fileID: 0}
       m_State: {fileID: 0}
       m_AvatarMask: {fileID: 0}
@@ -65,13 +67,14 @@ MonoBehaviour:
     m_SoundParried:
       m_Property:
         rid: 4340017104564519257
+    m_HitEffect:
+      m_Property:
+        rid: 4340017088909803670
     m_HitPause: 0
     m_HitPauseTimeScale: 0.05
     m_HitPauseDelay: 0.1
     m_HitPauseDuration: 0.1
-    m_HitEffect:
-      m_Property:
-        rid: 4340017088909803670
+    m_TimeScale: 0
   m_Animation: {fileID: 7400000, guid: 52457a68ffe2e4bd09dd0ba616b91ad5, type: 2}
   m_Mask: {fileID: 0}
   m_Motion: 2
@@ -97,6 +100,12 @@ MonoBehaviour:
   m_SpeedRecovery:
     m_Property:
       rid: 4340017104564519072
+  m_CanBlock:
+    m_Conditions:
+      m_Conditions: []
+  m_CanParry:
+    m_Conditions:
+      m_Conditions: []
   m_PoiseArmor:
     m_Property:
       rid: 4340017088909803657
@@ -124,6 +133,10 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 3874307875904421895
+      type: {class: GetAnimationInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: {fileID: 0}
     - rid: 4340017088909803639
       type: {class: GetStringString, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
@@ -242,15 +255,15 @@ MonoBehaviour:
     - rid: 4340017091051782440
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Value: 1
+        m_Value: 0.28
     - rid: 4340017091051782441
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Value: 1.5
+        m_Value: 0.21
     - rid: 4340017104564519072
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Value: 1
+        m_Value: 0.24
     - rid: 4340017104564519081
       type: {class: InstructionCameraShakeBurst, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:

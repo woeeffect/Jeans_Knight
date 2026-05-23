@@ -83,7 +83,7 @@ MonoBehaviour:
     m_Instructions:
       m_Instructions: []
   m_Controller: {fileID: 7510580779421158480}
-  m_StateClip: {fileID: 7400000, guid: fa958fb76ef3c58488343f9b51f4df15, type: 3}
+  m_StateClip: {fileID: -203655887218126122, guid: d983b2c4913396b4e9aa980583931751, type: 3}
   references:
     version: 2
     RefIds: []
@@ -97,4 +97,4 @@ AnimatorOverrideController:
   m_Controller: {fileID: 9100000, guid: 2c8b7312f36f04157932300782d990e0, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: 3fd1b37d27b754527950ef1a42916157, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: fa958fb76ef3c58488343f9b51f4df15, type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: d983b2c4913396b4e9aa980583931751, type: 3}
