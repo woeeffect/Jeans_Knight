@@ -140,8 +140,7 @@ MonoBehaviour:
           m_Value: 0.5
         m_Conditions:
           m_Conditions:
-            m_Conditions:
-            - rid: 4340017089037992699
+            m_Conditions: []
         m_Skill: {fileID: 11400000, guid: 85c9b235f2da6441aa1ea5c2c4d89b3a, type: 2}
     - rid: 4340017089037992686
       type: {class: GetDecimalConstantOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
@@ -162,8 +161,7 @@ MonoBehaviour:
           m_Value: 0.5
         m_Conditions:
           m_Conditions:
-            m_Conditions:
-            - rid: 4340017089037992695
+            m_Conditions: []
         m_Skill: {fileID: 11400000, guid: 7171d325ae18049e6bef4940f46cf931, type: 2}
     - rid: 4340017089037992688
       type: {class: GetDecimalConstantOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
@@ -184,8 +182,7 @@ MonoBehaviour:
           m_Value: 0.5
         m_Conditions:
           m_Conditions:
-            m_Conditions:
-            - rid: 4340017089037992703
+            m_Conditions: []
         m_Skill: {fileID: 11400000, guid: 414d1cd7f80114569b4a05862a99ad5a, type: 2}
     - rid: 4340017089037992690
       type: {class: GetDecimalConstantOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
@@ -206,8 +203,7 @@ MonoBehaviour:
           m_Value: 0.5
         m_Conditions:
           m_Conditions:
-            m_Conditions:
-            - rid: 4340017089037992707
+            m_Conditions: []
         m_Skill: {fileID: 11400000, guid: 0069f2d6648104804bdc803e68901dc9, type: 2}
     - rid: 4340017089037992692
       type: {class: GetDecimalConstantOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
@@ -228,147 +224,11 @@ MonoBehaviour:
           m_Value: 0.5
         m_Conditions:
           m_Conditions:
-            m_Conditions:
-            - rid: 4340017089037992711
+            m_Conditions: []
         m_Skill: {fileID: 11400000, guid: 00f7da3e97ac442d8b747ffaab0a862f, type: 2}
     - rid: 4340017089037992694
       type: {class: GetDecimalConstantOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data: 
-    - rid: 4340017089037992695
-      type: {class: ConditionMathCompareDistance, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
-      data:
-        m_Breakpoint: 0
-        m_IsEnabled: 1
-        m_Sign: 1
-        m_PointA:
-          m_Property:
-            rid: 4340017089037992696
-        m_PointB:
-          m_Property:
-            rid: 4340017089037992697
-        m_Distance:
-          m_Comparison: 4
-          m_CompareTo:
-            m_Property:
-              rid: 4340017089037992698
-    - rid: 4340017089037992696
-      type: {class: GetPositionSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
-    - rid: 4340017089037992697
-      type: {class: GetPositionTarget, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
-    - rid: 4340017089037992698
-      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data:
-        m_Value: 5
-    - rid: 4340017089037992699
-      type: {class: ConditionMathCompareDistance, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
-      data:
-        m_Breakpoint: 0
-        m_IsEnabled: 1
-        m_Sign: 1
-        m_PointA:
-          m_Property:
-            rid: 4340017089037992700
-        m_PointB:
-          m_Property:
-            rid: 4340017089037992701
-        m_Distance:
-          m_Comparison: 4
-          m_CompareTo:
-            m_Property:
-              rid: 4340017089037992702
-    - rid: 4340017089037992700
-      type: {class: GetPositionSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
-    - rid: 4340017089037992701
-      type: {class: GetPositionTarget, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
-    - rid: 4340017089037992702
-      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data:
-        m_Value: 5
-    - rid: 4340017089037992703
-      type: {class: ConditionMathCompareDistance, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
-      data:
-        m_Breakpoint: 0
-        m_IsEnabled: 1
-        m_Sign: 1
-        m_PointA:
-          m_Property:
-            rid: 4340017089037992704
-        m_PointB:
-          m_Property:
-            rid: 4340017089037992705
-        m_Distance:
-          m_Comparison: 4
-          m_CompareTo:
-            m_Property:
-              rid: 4340017089037992706
-    - rid: 4340017089037992704
-      type: {class: GetPositionSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
-    - rid: 4340017089037992705
-      type: {class: GetPositionTarget, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
-    - rid: 4340017089037992706
-      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data:
-        m_Value: 5
-    - rid: 4340017089037992707
-      type: {class: ConditionMathCompareDistance, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
-      data:
-        m_Breakpoint: 0
-        m_IsEnabled: 1
-        m_Sign: 1
-        m_PointA:
-          m_Property:
-            rid: 4340017089037992708
-        m_PointB:
-          m_Property:
-            rid: 4340017089037992709
-        m_Distance:
-          m_Comparison: 4
-          m_CompareTo:
-            m_Property:
-              rid: 4340017089037992710
-    - rid: 4340017089037992708
-      type: {class: GetPositionSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
-    - rid: 4340017089037992709
-      type: {class: GetPositionTarget, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
-    - rid: 4340017089037992710
-      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data:
-        m_Value: 5
-    - rid: 4340017089037992711
-      type: {class: ConditionMathCompareDistance, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
-      data:
-        m_Breakpoint: 0
-        m_IsEnabled: 1
-        m_Sign: 1
-        m_PointA:
-          m_Property:
-            rid: 4340017089037992712
-        m_PointB:
-          m_Property:
-            rid: 4340017089037992713
-        m_Distance:
-          m_Comparison: 4
-          m_CompareTo:
-            m_Property:
-              rid: 4340017089037992714
-    - rid: 4340017089037992712
-      type: {class: GetPositionSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
-    - rid: 4340017089037992713
-      type: {class: GetPositionTarget, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data: 
-    - rid: 4340017089037992714
-      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data:
-        m_Value: 5
     - rid: 4340017105353310275
       type: {class: ComboItem, ns: GameCreator.Runtime.Melee, asm: GameCreator.Runtime.Melee}
       data:

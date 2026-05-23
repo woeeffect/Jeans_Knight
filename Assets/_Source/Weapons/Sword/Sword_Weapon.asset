@@ -50,7 +50,7 @@ MonoBehaviour:
       m_Property:
         rid: 3874307742447698343
     m_RuntimeController: {fileID: 0}
-    m_State: {fileID: 11400000, guid: dbd6d6c3d984c4a279cbf4bc5404fd16, type: 2}
+    m_State: {fileID: 11400000, guid: d021119f05de5466c98f56d25155d759, type: 2}
     m_AvatarMask: {fileID: 0}
   m_Layer:
     m_Property:
