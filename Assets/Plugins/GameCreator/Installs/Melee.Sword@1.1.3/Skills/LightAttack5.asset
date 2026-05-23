@@ -274,7 +274,7 @@ MonoBehaviour:
     - rid: 4340017088909803670
       type: {class: GetGameObjectInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_GameObject: {fileID: 3135502183617210236, guid: 68f683b4490a54597b56f34fbfd3205c, type: 3}
+        m_GameObject: {fileID: 4121051019878685839, guid: 0c87685f9b8c0a64eaca1a2fa54266ce, type: 3}
     - rid: 4340017089319273028
       type: {class: GetAudioClip, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:

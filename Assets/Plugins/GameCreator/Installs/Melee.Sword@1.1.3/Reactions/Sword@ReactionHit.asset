@@ -43,7 +43,6 @@ MonoBehaviour:
     - rid: 6520063822367293484
       type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_MinPower:
@@ -65,7 +64,6 @@ MonoBehaviour:
     - rid: 6655073804197822464
       type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_MinPower:
@@ -88,7 +86,6 @@ MonoBehaviour:
     - rid: 6655073818933985280
       type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_MinPower:
@@ -111,7 +108,6 @@ MonoBehaviour:
     - rid: 6655073818933985281
       type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_MinPower:
@@ -134,7 +130,6 @@ MonoBehaviour:
     - rid: 7624061013279113439
       type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_MinPower:
@@ -161,7 +156,6 @@ MonoBehaviour:
     - rid: 7624061436791882452
       type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_MinPower:
@@ -183,7 +177,6 @@ MonoBehaviour:
     - rid: 7624061442461270834
       type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_MinPower:
@@ -207,7 +200,6 @@ MonoBehaviour:
     - rid: 7624061442461270835
       type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_MinPower:
@@ -229,7 +221,6 @@ MonoBehaviour:
     - rid: 7624061442461270836
       type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_MinPower:
@@ -251,7 +242,6 @@ MonoBehaviour:
     - rid: 7624061442461270837
       type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_MinPower:
@@ -273,7 +263,6 @@ MonoBehaviour:
     - rid: 7624061442461270838
       type: {class: ConditionCharacterIsAirborne, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_Sign: 1
@@ -282,10 +271,10 @@ MonoBehaviour:
             rid: 7624061442461270840
     - rid: 7624061442461270840
       type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
     - rid: 7624061442461270841
       type: {class: ConditionCharacterIsAirborne, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_Sign: 1
@@ -294,10 +283,10 @@ MonoBehaviour:
             rid: 7624061442461270842
     - rid: 7624061442461270842
       type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
     - rid: 7624061442461270843
       type: {class: ConditionCharacterIsAirborne, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_Sign: 1
@@ -306,10 +295,10 @@ MonoBehaviour:
             rid: 7624061442461270844
     - rid: 7624061442461270844
       type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
     - rid: 7624061442461270845
       type: {class: ConditionCharacterIsAirborne, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_Sign: 1
@@ -318,6 +307,7 @@ MonoBehaviour:
             rid: 7624061442461270846
     - rid: 7624061442461270846
       type: {class: GetGameObjectSelf, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
     - rid: 7624061443021209600
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
@@ -325,7 +315,6 @@ MonoBehaviour:
     - rid: 7624061458449694720
       type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_MinPower:
