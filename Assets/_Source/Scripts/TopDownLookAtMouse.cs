@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class TopDownLookAtMouse : MonoBehaviour
 {
+    [SerializeField] private float m_RotationSpeed = 720f;
+
     private Camera m_MainCamera;
+
+    public float RotationSpeed
+    {
+        get => this.m_RotationSpeed;
+        set => this.m_RotationSpeed = Mathf.Max(0f, value);
+    }
 
     private void Awake()
     {
@@ -25,6 +33,13 @@ public class TopDownLookAtMouse : MonoBehaviour
         if (direction.sqrMagnitude <= 0.001f) return;
 
         Quaternion targetRotation = Quaternion.LookRotation(direction);
-        transform.rotation = targetRotation;
+        if (this.m_RotationSpeed <= 0f)
+        {
+            transform.rotation = targetRotation;
+            return;
+        }
+
+        float maxDegreesDelta = this.m_RotationSpeed * Time.deltaTime;
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, maxDegreesDelta);
     }
 }

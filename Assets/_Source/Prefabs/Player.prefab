@@ -279,6 +279,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Instructions:
     m_Instructions:
+    - rid: 3874307897391055110
+    - rid: 3874307897391055203
     - rid: 4340017111633757046
     - rid: 3874307893451555446
     - rid: 3874307896569758307
@@ -287,6 +289,10 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 1000
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 240
     - rid: 3874307893451555446
       type: {class: InstructionCharacterPropertyMoveSpeed, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
@@ -323,11 +329,37 @@ MonoBehaviour:
         m_Enable:
           m_Property:
             rid: 3874307896569758309
+        m_RotationSpeed:
+          m_Property:
+            rid: 1000
     - rid: 3874307896569758308
       type: {class: GetGameObjectPlayer, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data: 
     - rid: 3874307896569758309
       type: {class: GetBoolValue, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 1
+    - rid: 3874307897391055110
+      type: {class: InstructionMeleeForceCancel, ns: GameCreator.Runtime.Melee, asm: Assembly-CSharp-firstpass}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Character:
+          m_Property:
+            rid: 3874307897391055111
+    - rid: 3874307897391055111
+      type: {class: GetGameObjectPlayer, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 3874307897391055203
+      type: {class: InstructionCommonTimeFrame, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Frames:
+          m_Property:
+            rid: 3874307897391055204
+    - rid: 3874307897391055204
+      type: {class: GetDecimalInteger, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Value: 1
     - rid: 4340017111633757041
@@ -1656,6 +1688,10 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 1000
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 720
     - rid: 3874307896569757804
       type: {class: InstructionCharacterPropertyMoveSpeed, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
@@ -1698,6 +1734,9 @@ MonoBehaviour:
         m_Enable:
           m_Property:
             rid: 3874307896569758312
+        m_RotationSpeed:
+          m_Property:
+            rid: 1000
     - rid: 3874307896569758311
       type: {class: GetGameObjectPlayer, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data: 
