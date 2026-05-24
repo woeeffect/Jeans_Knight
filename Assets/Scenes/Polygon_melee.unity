@@ -6030,6 +6030,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1130515551}
   m_CullTransparentMesh: 1
+--- !u!95 &1150260371 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2904454945526902343, guid: 51f39fe78765fe8459d7beeef1865dea, type: 3}
+  m_PrefabInstance: {fileID: 7549819432598558576}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1151446772
 GameObject:
   m_ObjectHideFlags: 0
@@ -8812,6 +8817,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1564096996}
   - component: {fileID: 1564096995}
+  - component: {fileID: 1564096997}
   m_Layer: 0
   m_Name: Test_Input
   m_TagString: Untagged
@@ -8833,7 +8839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: GameCreator.Runtime.Core::GameCreator.Runtime.VisualScripting.Trigger
   m_Instructions:
     m_Instructions:
-    - rid: 3874307893451554990
+    - rid: 3874307893451555777
   m_TriggerEvent:
     rid: 3874307785526870051
   references:
@@ -8859,31 +8865,31 @@ MonoBehaviour:
       type: {class: InputButtonKeyboardPress, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Key: 19
-    - rid: 3874307893451554990
-      type: {class: InstructionCharacterPropertyMoveSpeed, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+    - rid: 3874307893451555777
+      type: {class: InstructionCharacterAnimatorSpeed, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_Character:
           m_Property:
-            rid: 3874307893451554991
+            rid: 3874307893451555778
         m_Speed:
           m_Operation: 1
           m_Value:
             m_Property:
-              rid: 3874307893451554992
+              rid: 3874307893451555827
         m_Transition:
           m_Duration: 0
           m_Easing: 3
           m_Time: 0
           m_WaitToComplete: 1
-    - rid: 3874307893451554991
+    - rid: 3874307893451555778
       type: {class: GetGameObjectPlayer, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data: 
-    - rid: 3874307893451554992
+    - rid: 3874307893451555827
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Value: 4
+        m_Value: 1
 --- !u!4 &1564096996
 Transform:
   m_ObjectHideFlags: 0
@@ -8899,6 +8905,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1564096997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564096994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b845a94b95505749920d05d9a3a49cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Test_Animator
+  animator: {fileID: 1150260371}
+  speed: 0
 --- !u!1 &1578396977
 GameObject:
   m_ObjectHideFlags: 0
@@ -27250,6 +27270,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7433683091332254396, guid: 51f39fe78765fe8459d7beeef1865dea, type: 3}
       propertyPath: managedReferences[3874307893451555446].m_Transition.m_WaitToComplete
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7542433458774383158, guid: 51f39fe78765fe8459d7beeef1865dea, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583527573450088742, guid: 51f39fe78765fe8459d7beeef1865dea, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
