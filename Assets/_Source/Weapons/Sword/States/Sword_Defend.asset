@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232752578b594dac8363ce5618d051fa, type: 3}
   m_Name: Sword_Defend
   m_EditorClassIdentifier: 
-  m_StateMask: {fileID: 0}
+  m_StateMask: {fileID: 31900000, guid: a9a4646b99dc14b6ea4d6a98c1f91e08, type: 2}
   m_Entry:
     m_EntryClip: {fileID: 0}
     m_EntryMask: {fileID: 0}
@@ -24,9 +24,9 @@ MonoBehaviour:
   m_Properties:
     m_IsControllable:
       m_IsEnabled: 0
-      m_Value: 1
+      m_Value: 0
     m_Speed:
-      m_IsEnabled: 1
+      m_IsEnabled: 0
       m_Value: 0
     m_Rotation:
       m_IsEnabled: 0

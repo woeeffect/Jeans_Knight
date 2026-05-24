@@ -30,7 +30,9 @@ MonoBehaviour:
       rid: 4340017089037992740
   m_State:
     m_StateType: 2
-    m_AnimationClip: {fileID: 0}
+    m_AnimationClip:
+      m_Property:
+        rid: 3874307893451554821
     m_RuntimeController: {fileID: 0}
     m_State: {fileID: 11400000, guid: 21eedebe4181146a79078b6b94366773, type: 2}
     m_AvatarMask: {fileID: 0}
@@ -67,6 +69,10 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 3874307893451554821
+      type: {class: GetAnimationInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: {fileID: 0}
     - rid: 4340017089037992736
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
