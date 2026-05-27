@@ -43,8 +43,9 @@ namespace GameCreator.Runtime.VisualScripting
         {
             Vector3 a = this.m_PointA.Get(args);
             Vector3 b = this.m_PointB.Get(args);
-
+            
             float distance = Vector3.Distance(a, b);
+            bool flag = this.m_Distance.Match(distance, args);
             return this.m_Distance.Match(distance, args);
         }
     }
