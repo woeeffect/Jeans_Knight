@@ -13085,12 +13085,44 @@ MonoBehaviour:
   m_Instructions:
     m_Instructions:
     - rid: 4340017173305229435
+    - rid: 3820088328521515605
+    - rid: 3820088328521515610
     - rid: 4340017173305229446
   m_TriggerEvent:
     rid: 4340017173305229430
   references:
     version: 2
     RefIds:
+    - rid: 3820088328521515605
+      type: {class: InstructionTransformLookAt, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Transform:
+          m_Property:
+            rid: 3820088328521515608
+        m_Target:
+          m_Property:
+            rid: 3820088328521515609
+    - rid: 3820088328521515608
+      type: {class: GetGameObjectCharactersInstance, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_Character: {fileID: 7002922500779984075}
+    - rid: 3820088328521515609
+      type: {class: GetGameObjectPlayer, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 3820088328521515610
+      type: {class: InstructionCommonTimeFrame, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Frames:
+          m_Property:
+            rid: 3820088328521515611
+    - rid: 3820088328521515611
+      type: {class: GetDecimalInteger, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 1
     - rid: 4340017173305229430
       type: {class: EventOnInterval, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:

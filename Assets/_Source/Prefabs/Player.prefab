@@ -283,16 +283,11 @@ MonoBehaviour:
     - rid: 3874307897391055203
     - rid: 4340017111633757046
     - rid: 3874307893451555446
-    - rid: 3874307896569758307
   m_TriggerEvent:
     rid: 4340017111633757041
   references:
     version: 2
     RefIds:
-    - rid: 1000
-      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data:
-        m_Value: 240
     - rid: 3874307893451555446
       type: {class: InstructionCharacterPropertyMoveSpeed, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
@@ -318,27 +313,6 @@ MonoBehaviour:
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Value: 0
-    - rid: 3874307896569758307
-      type: {class: InstructionCharacterLookAtMouse, ns: GameCreator.Runtime.VisualScripting, asm: Assembly-CSharp}
-      data:
-        m_Breakpoint: 0
-        m_IsEnabled: 1
-        m_Character:
-          m_Property:
-            rid: 3874307896569758308
-        m_Enable:
-          m_Property:
-            rid: 3874307896569758309
-        m_RotationSpeed:
-          m_Property:
-            rid: 1000
-    - rid: 3874307896569758308
-      type: {class: GetGameObjectPlayer, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
-      data: 
-    - rid: 3874307896569758309
-      type: {class: GetBoolValue, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data:
-        m_Value: 1
     - rid: 3874307897391055110
       type: {class: InstructionMeleeForceCancel, ns: GameCreator.Runtime.Melee, asm: Assembly-CSharp-firstpass}
       data:
@@ -1682,16 +1656,11 @@ MonoBehaviour:
     m_Instructions:
     - rid: 4340017111633757048
     - rid: 3874307896569757804
-    - rid: 3874307896569758310
   m_TriggerEvent:
     rid: 4340017111633757041
   references:
     version: 2
     RefIds:
-    - rid: 1000
-      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data:
-        m_Value: 720
     - rid: 3874307896569757804
       type: {class: InstructionCharacterPropertyMoveSpeed, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
@@ -1723,27 +1692,6 @@ MonoBehaviour:
           m_Name:
             m_String: playerSpeed
             m_ID: 836301274
-    - rid: 3874307896569758310
-      type: {class: InstructionCharacterLookAtMouse, ns: GameCreator.Runtime.VisualScripting, asm: Assembly-CSharp}
-      data:
-        m_Breakpoint: 0
-        m_IsEnabled: 1
-        m_Character:
-          m_Property:
-            rid: 3874307896569758311
-        m_Enable:
-          m_Property:
-            rid: 3874307896569758312
-        m_RotationSpeed:
-          m_Property:
-            rid: 1000
-    - rid: 3874307896569758311
-      type: {class: GetGameObjectPlayer, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
-      data: 
-    - rid: 3874307896569758312
-      type: {class: GetBoolValue, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-      data:
-        m_Value: 0
     - rid: 4340017111633757041
       type: {class: EventOnInputButton, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
@@ -3969,11 +3917,49 @@ MonoBehaviour:
   m_Instructions:
     m_Instructions:
     - rid: 4340017111633757023
+    - rid: 3820088326712984228
+    - rid: 3820088326712984230
   m_TriggerEvent:
     rid: 4340017111633757022
   references:
     version: 2
     RefIds:
+    - rid: 3820088326712984228
+      type: {class: InstructionCommonTimeFrame, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Frames:
+          m_Property:
+            rid: 3820088326712984229
+    - rid: 3820088326712984229
+      type: {class: GetDecimalInteger, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 1
+    - rid: 3820088326712984230
+      type: {class: InstructionMeleeEquipWeapon, ns: GameCreator.Runtime.Melee, asm: GameCreator.Runtime.Melee}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Character:
+          m_Property:
+            rid: 3820088326712984231
+        m_Weapon:
+          m_Property:
+            rid: 3820088326712984232
+        m_Model:
+          m_Property:
+            rid: 3820088326712984233
+    - rid: 3820088326712984231
+      type: {class: GetGameObjectPlayer, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 3820088326712984232
+      type: {class: GetWeaponMeleeInstance, ns: GameCreator.Runtime.Melee, asm: GameCreator.Runtime.Melee}
+      data:
+        m_Weapon: {fileID: 11400000, guid: 81afd357a25b80542b862e92fca149dd, type: 2}
+    - rid: 3820088326712984233
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
     - rid: 4340017111633757022
       type: {class: EventOnStart, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data: 

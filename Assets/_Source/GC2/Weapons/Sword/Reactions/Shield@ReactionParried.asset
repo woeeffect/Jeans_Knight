@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aef183b872bc4fd6b31ce8b5d8c35f11, type: 3}
-  m_Name: Brawler_Reaction_Parried
+  m_Name: Shield@ReactionParried
   m_EditorClassIdentifier: 
   m_TransitionIn: 0.05
-  m_TransitionOut: 0.15
-  m_UseRootMotion: 1
+  m_TransitionOut: 0.25
+  m_UseRootMotion: 0
   m_Speed:
     m_Property:
-      rid: 7624061010851921933
+      rid: 3592961068740903436
   m_ReactionList:
     m_List:
-    - rid: 7624061010851921934
+    - rid: 3592961068740903437
   m_OnEnter:
     m_Instructions:
       m_Instructions: []
@@ -30,18 +30,18 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 7624061010851921933
+    - rid: 3592961068740903436
       type: {class: GetDecimalConstantOne, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-    - rid: 7624061010851921934
+      data: 
+    - rid: 3592961068740903437
       type: {class: ReactionItem, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data:
-        m_IsExpanded: 0
         m_Breakpoint: 0
         m_IsEnabled: 1
         m_MinPower:
           m_IsEnabled: 0
           m_Value: 1
-        m_Direction: 0
+        m_Direction: 3
         m_Conditions:
           m_Conditions:
             m_Conditions: []
@@ -49,8 +49,8 @@ MonoBehaviour:
         m_CancelTime:
           m_IsEnabled: 0
           m_Value: 0.5
-        m_Rotation: 0
+        m_Rotation: 2
         m_Gravity: 1
         m_Animations:
           m_Animations:
-          - {fileID: 7400000, guid: 6bdef36cd658b4325bb74555ccd8c0f3, type: 2}
+          - {fileID: 7400000, guid: 43dff4fddbcdd23488e7db0e18ab0943, type: 3}

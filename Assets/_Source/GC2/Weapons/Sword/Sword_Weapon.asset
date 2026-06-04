@@ -43,7 +43,7 @@ MonoBehaviour:
       - rid: 4340017089037992745
       - rid: 4340017089037992749
       - rid: 4340017089037992747
-  m_Shield: {fileID: 11400000, guid: 2e2233525ba0246a99c903603932255d, type: 2}
+  m_Shield: {fileID: 0}
   m_State:
     m_StateType: 2
     m_AnimationClip:
