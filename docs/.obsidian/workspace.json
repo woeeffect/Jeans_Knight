@@ -1,0 +1,221 @@
+{
+  "main": {
+    "id": "298f086e93fab465",
+    "type": "split",
+    "children": [
+      {
+        "id": "e50141e128ee8873",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "aad3ca5ae754d864",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8daf8070ab27b1e6",
+    "type": "split",
+    "children": [
+      {
+        "id": "7aa556d0e188c3ce",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "38dfd2cb28887836",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "93164ea3febe6882",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "d1a592e6d5cd4ae0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "5e23ea9cb10fa286",
+    "type": "split",
+    "children": [
+      {
+        "id": "223b9774518fc67c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e9f1733b6bf7e535",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Classes/Combat/Runtime/Projectile.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Projectile"
+            }
+          },
+          {
+            "id": "3879a10acb90eca4",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Classes/Combat/Runtime/Projectile.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Projectile"
+            }
+          },
+          {
+            "id": "30c66d0020f80f82",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "c201dd870a7f89c9",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "bfc57c858f5ecac1",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Classes/Combat/Runtime/Projectile.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Projectile"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "aad3ca5ae754d864",
+  "lastOpenFiles": [
+    "Classes/Character/HeroController.md",
+    "Classes/Character/AnimatorParams.md",
+    "Classes/Combat/States/AttackState.md",
+    "Classes/Combat/States/BlockState.md",
+    "Classes/Combat/States/DodgeState.md",
+    "Classes/Inventory/Runtime/InventoryService.md",
+    "Classes/Inventory/UI/InventoryPanel.md",
+    "Classes/StateMachine/States/IdleWalkRunStates.md",
+    "DataObjects/ArmorDataSO.md",
+    "DataObjects/CharacterStatsSO.md",
+    "DataObjects/WeaponDataSO.md",
+    "Classes/Installers/GameInstaller.md",
+    "Classes/Combat/Runtime/StaminaComponent.md",
+    "Classes/Combat/Runtime/Projectile.md",
+    "Classes/Combat/Runtime/WeaponHitbox.md",
+    "Systems/Input.md",
+    "Classes/Combat/Controllers/WeaponHandler.md",
+    "01_Архитектура.md",
+    "Classes/Combat/Controllers/BlockController.md",
+    "2026-04-18.md",
+    "Untitled.base",
+    "HowTo/AddNewWeapon.md",
+    "superpowers/specs/2026-04-13-character-controller-design.md",
+    "Classes/Inventory/Runtime",
+    "Classes/Inventory",
+    "Classes/Installers",
+    "Classes/AI/DummyTarget.md",
+    "Classes/AI",
+    "Inventory/Runtime/InventoryService.md",
+    "Classes/Inventory/UI",
+    "Classes/Inventory 1/Runtime",
+    "Classes/Inventory 1",
+    "Classes/Combat/States/HitReactionState.md",
+    "Classes/Combat/Runtime/HealthComponent.md",
+    "Classes/Combat/States",
+    "Classes/Combat/Runtime"
+  ]
+}
