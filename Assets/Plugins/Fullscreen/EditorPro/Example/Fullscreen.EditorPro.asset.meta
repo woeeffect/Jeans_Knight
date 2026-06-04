@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b01e453858fbd684385f48daca608af8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 309028
+  packageName: Editor Pro | Game Creator 2
+  packageVersion: 1.2.8
+  assetPath: Assets/Plugins/Fullscreen/EditorPro/Example/Fullscreen.EditorPro.asset
+  uploadId: 790282

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 7eb3e4080dfd78d40adfaa804322ef4e
+AssetOrigin:
+  serializedVersion: 1
+  productId: 309028
+  packageName: Editor Pro | Game Creator 2
+  packageVersion: 1.2.8
+  assetPath: Assets/Plugins/Fullscreen/EditorPro/Editor/Settings/ExcludedFolderPropertyDrawer.cs
+  uploadId: 790282
