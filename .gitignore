@@ -110,3 +110,8 @@ Build.app/
 /[Aa]ssets/Settings/CustomToolbar/SceneBookmarks.asset
 /[Aa]ssets/Settings/CustomToolbar/SceneBookmarks.asset.meta
 
+# 🗺️ Project wiki & agent instruction files (local-only)
+/docs/wiki/
+/CLAUDE.md
+/AGENTS.md
+
